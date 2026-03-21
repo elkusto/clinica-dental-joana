@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Dental Joana – Fuenlabrada</title>
+  <meta name="description" content="Clínica Dental Joana, más de 25 años siendo tu clínica dental de confianza en Fuenlabrada. Tratamientos personalizados: implantes, estética dental, ortodoncia y más." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a6fb4; --blue-d: #12518a; --blue-l: #e8f3fc; --accent: #2abfbf;
+      --text: #1e2d3d; --gray: #64748b; --light: #f8fafc; --white: #ffffff;
+      --radius: 12px; --shadow: 0 4px 24px rgba(26,111,180,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 0 5%; }
+    .nav-inner { max-width: 1100px; margin: auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--blue); text-decoration: none; line-height: 1.2; }
+    .nav-logo span { display: block; font-size: 0.7rem; font-family: 'Inter', sans-serif; font-weight: 400; color: var(--gray); letter-spacing: .04em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: .45rem 1.1rem; border-radius: 50px; transition: background .2s !important; }
+    .nav-cta:hover { background: var(--blue-d) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+    .hero { background: linear-gradient(135deg, #0d4a8a 0%, #1a6fb4 55%, #2abfbf 100%); color: var(--white); padding: 100px 5% 80px; text-align: center; position: relative; overflow: hidden; }
+    .hero-inner { max-width: 760px; margin: auto; position: relative; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: var(--white); font-size: .8rem; font-weight: 600; padding: .35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; letter-spacing: .06em; text-transform: uppercase; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; margin-bottom: 1.2rem; }
+    .hero p { font-size: 1.1rem; line-height: 1.75; color: rgba(255,255,255,0.88); max-width: 640px; margin: 0 auto 2.5rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: all .2s; cursor: pointer; border: none; }
+    .btn-white { background: var(--white); color: var(--blue); }
+    .btn-white:hover { background: #e8f3fc; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.6); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: .8rem; color: rgba(255,255,255,.75); margin-top: .3rem; letter-spacing: .04em; text-transform: uppercase; }
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1100px; margin: auto; }
+    .section-tag { display: inline-block; background: var(--blue-l); color: var(--blue); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1rem; color: var(--text); }
+    .lead { font-size: 1.05rem; color: var(--gray); line-height: 1.8; max-width: 660px; }
+    #nosotros { background: var(--light); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-visual { background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%); border-radius: var(--radius); height: 340px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .about-center { text-align: center; position: absolute; color: var(--white); padding: 2rem; }
+    .about-center p { font-size: 1.1rem; line-height: 1.7; font-weight: 300; }
+    .about-center strong { font-size: 1.6rem; display: block; font-family: 'Playfair Display', serif; margin-bottom: .5rem; }
+    .values { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.8rem; }
+    .value-item { display: flex; align-items: flex-start; gap: .9rem; }
+    .value-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-l); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .value-item h4 { font-size: .95rem; font-weight: 600; margin-bottom: .2rem; }
+    .value-item p { font-size: .87rem; color: var(--gray); line-height: 1.5; }
+    #tratamientos { background: var(--white); }
+    .treatments-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .treatment-card { border: 1.5px solid #e2eaf3; border-radius: var(--radius); padding: 1.8rem; transition: all .25s; }
+    .treatment-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .tc-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--blue-l); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+    .treatment-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .65rem; color: var(--text); }
+    .treatment-card p { font-size: .875rem; color: var(--gray); line-height: 1.7; }
+    #por-que { background: linear-gradient(135deg, #0d4a8a, #1a6fb4 60%, #1fa8a8); color: var(--white); }
+    #por-que .section-tag { background: rgba(255,255,255,.15); color: var(--white); }
+    #por-que h2 { color: var(--white); }
+    #por-que .lead { color: rgba(255,255,255,.8); }
+    .whyus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .whyus-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); padding: 1.6rem; text-align: center; transition: background .2s; }
+    .whyus-card:hover { background: rgba(255,255,255,.17); }
+    .whyus-card .icon { font-size: 2.2rem; margin-bottom: .8rem; }
+    .whyus-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .5rem; }
+    .whyus-card p { font-size: .83rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+    #contacto { background: var(--light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.4rem; }
+    .info-block { display: flex; gap: 1rem; align-items: flex-start; }
+    .info-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .info-block h4 { font-size: .85rem; color: var(--gray); margin-bottom: .2rem; text-transform: uppercase; letter-spacing: .06em; }
+    .info-block p, .info-block a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; }
+    .info-block a:hover { color: var(--blue); }
+    .contact-form { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+    .contact-form h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .form-row { display: flex; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1rem; flex: 1; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: .05em; }
+    .form-group input, .form-group textarea { border: 1.5px solid #d6e4f0; border-radius: 8px; padding: .65rem 1rem; font-size: .95rem; font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); transition: border-color .2s; outline: none; width: 100%; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .btn-submit { width: 100%; padding: .85rem; background: var(--blue); color: var(--white); border: none; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .2s; }
+    .btn-submit:hover { background: var(--blue-d); transform: translateY(-1px); }
+    .map-placeholder { margin-top: 1.5rem; border-radius: var(--radius); overflow: hidden; border: 1.5px solid #d6e4f0; }
+    .map-placeholder iframe { width: 100%; height: 220px; display: block; border: none; }
+    footer { background: #0d2240; color: rgba(255,255,255,.75); padding: 3rem 5% 1.5rem; font-size: .875rem; }
+    .footer-inner { max-width: 1100px; margin: auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .footer-brand h3 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.2rem; margin-bottom: .5rem; }
+    .footer-brand p { line-height: 1.7; max-width: 280px; }
+    .footer-links h4 { color: var(--white); font-size: .85rem; margin-bottom: .9rem; text-transform: uppercase; letter-spacing: .07em; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-links a { color: rgba(255,255,255,.65); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { text-align: center; padding-top: 1.5rem; color: rgba(255,255,255,.4); font-size: .8rem; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); padding: 1.5rem 5%; box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+      .hamburger { display: flex; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-visual { height: 200px; }
+      .form-row { flex-direction: column; }
+      .hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">Clínica Dental Joana<span>Fuenlabrada · Madrid</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#tratamientos">Tratamientos</a></li>
+      <li><a href="#por-que">¿Por qué elegirnos?</a></li>
+      <li><a href="#contacto" class="nav-cta">Pedir cita</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-badge">🦷 Tu clínica de confianza en Fuenlabrada</div>
+    <h1>Más de 25 años cuidando<br>tu sonrisa</h1>
+    <p>Somos una clínica dental multidisciplinaria donde siempre serás atendido por la misma doctora. La empatía, la calidad y la responsabilidad son nuestra razón de ser.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-white">📅 Pedir cita ahora</a>
+      <a href="tel:916075315" class="btn btn-outline">📞 916 07 53 15</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Años de experiencia</div></div>
+      <div class="stat"><div class="stat-num">17+</div><div class="stat-label">Años en implantología</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Trato personalizado</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-center">
+          <strong>"Lo nuestro es la mejor opción"</strong>
+          <p>Siempre intentamos conservar tus dientes naturales antes de cualquier otra alternativa.</p>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">Nuestra clínica</div>
+        <h2>Una clínica dental cercana y de confianza</h2>
+        <p class="lead">La clínica dental Joana es un centro de tratamiento dental multidisciplinario en el que ofrecemos tratamientos y atención completamente personalizada en Fuenlabrada (Madrid).</p>
+        <p style="font-size:.9rem;color:var(--gray);line-height:1.8;margin-top:1rem;">En nuestra clínica siempre serás atendido por la misma doctora, desde el inicio hasta el final del tratamiento. Las familias de Fuenlabrada llevan décadas confiándonos su salud bucodental y sintiéndose como en casa.</p>
+        <div class="values">
+          <div class="value-item"><div class="value-icon">💛</div><div><h4>Empatía con el paciente</h4><p>Tratamos a cada paciente con la cercanía y el cuidado que merece.</p></div></div>
+          <div class="value-item"><div class="value-icon">🏆</div><div><h4>Calidad y responsabilidad</h4><p>Más de 25 años siendo la mejor publicidad gracias a la satisfacción de nuestros pacientes.</p></div></div>
+          <div class="value-item"><div class="value-icon">💳</div><div><h4>Financiación flexible</h4><p>Opciones de pago adaptadas a las necesidades de cada familia.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamientos">
+  <div class="section-inner">
+    <div class="section-tag">Lo que ofrecemos</div>
+    <h2>Tratamientos destacados</h2>
+    <p class="lead">Ofrecemos una amplia gama de tratamientos dentales adaptados a las necesidades de cada paciente.</p>
+    <div class="treatments-grid">
+      <div class="treatment-card"><div class="tc-icon">🔬</div><h3>Cirugía Dental</h3><p>Realizamos todos los tratamientos quirúrgicos, incluyendo cirugía periodontal con injertos de hueso autólogo y plasma rico en factores de crecimiento para recuperar dientes con movilidad.</p></div>
+      <div class="treatment-card"><div class="tc-icon">🦴</div><h3>Implantes Osteointegrados</h3><p>Implantes de titanio de alta calidad con más de 17 años de experiencia. Planificación cuidadosa de cada caso para garantizar los mejores resultados.</p></div>
+      <div class="treatment-card"><div class="tc-icon">🦷</div><h3>Cirugías Periodontales</h3><p>Tratamiento de la periodontitis (piorrea) y enfermedad periodontal. Actuamos desde las fases tempranas para preservar tus dientes y evitar su pérdida.</p></div>
+      <div class="treatment-card"><div class="tc-icon">✨</div><h3>Estética Dental</h3><p>Blanqueamientos, carillas, coronas cerámicas, ortodoncia y relleno con plasma rico en factores de crecimiento. Para conseguir la sonrisa que siempre has deseado.</p></div>
+      <div class="treatment-card"><div class="tc-icon">🔧</div><h3>Prótesis Dental</h3><p>Prótesis fijas y móviles para reponer dientes perdidos. Coronas, puentes, carillas y prótesis sobre implantes. Rehabilitación completa estética y funcional.</p></div>
+      <div class="treatment-card"><div class="tc-icon">🩺</div><h3>Endodoncias y Odontología General</h3><p>Revisión completa de toda la boca. Enseñamos hábitos de higiene para que los tratamientos tengan resultados permanentes y duraderos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="por-que">
+  <div class="section-inner">
+    <div class="section-tag">Nuestras ventajas</div>
+    <h2>¿Por qué elegir la Clínica Dental Joana?</h2>
+    <p class="lead">Llevamos más de 25 años ganándonos la confianza de las familias de Fuenlabrada.</p>
+    <div class="whyus-grid">
+      <div class="whyus-card"><div class="icon">👩‍⚕️</div><h4>Siempre la misma doctora</h4><p>Desde el inicio hasta el final del tratamiento, siempre serás atendido por la misma especialista.</p></div>
+      <div class="whyus-card"><div class="icon">💬</div><h4>Presupuesto sin compromiso</h4><p>Tendrás todo el tiempo que necesites para pensarlo y compararlo, sin ninguna presión.</p></div>
+      <div class="whyus-card"><div class="icon">💳</div><h4>Financiación a medida</h4><p>Financiación adaptada a las necesidades de cada familia para que el coste nunca sea un obstáculo.</p></div>
+      <div class="whyus-card"><div class="icon">🏠</div><h4>Te sentirás como en casa</h4><p>Un espacio de confianza donde olvidas los nervios y llevas el tratamiento de forma llevadera.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="section-inner">
+    <div class="section-tag">Estamos aquí para ayudarte</div>
+    <h2>Pide tu cita</h2>
+    <p class="lead">¿Tienes alguna duda o quieres concertar una cita? Contáctanos por teléfono o rellena el formulario y te llamaremos.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-block"><div class="info-icon">📞</div><div><h4>Teléfono</h4><a href="tel:916075315">916 07 53 15</a></div></div>
+        <div class="info-block"><div class="info-icon">📍</div><div><h4>Dirección</h4><p>Calle Andorra 25, Fuenlabrada (Madrid)<br>CP: 28943</p></div></div>
+        <div class="info-block"><div class="info-icon">🕐</div><div><h4>Horario</h4><p>Lunes a Viernes<br>10:00–13:00 y 17:00–20:00<br><small style="color:var(--gray);font-weight:400">Consultarnos para otros horarios</small></p></div></div>
+        <div class="map-placeholder"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.946!2d-3.812!3d40.284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Andorra+25%2C+Fuenlabrada!5e0!3m2!1ses!2ses!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Clínica Dental Joana"></iframe></div>
+      </div>
+      <div class="contact-form">
+        <h3>✉️ Solicitar cita online</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required /></div>
+            <div class="form-group"><label>Apellidos *</label><input type="text" name="apellidos" placeholder="Tus apellidos" required /></div>
+          </div>
+          <div class="form-group"><label>Nombre del paciente</label><input type="text" name="paciente" placeholder="Si es para otra persona" /></div>
+          <div class="form-group"><label>Teléfono de contacto *</label><input type="tel" name="telefono" placeholder="Ej: 666 123 456" required /></div>
+          <div class="form-group"><label>Comentario o motivo de la consulta</label><textarea name="comentario" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea></div>
+          <button type="submit" class="btn-submit">Enviar solicitud de cita →</button>
+          <p style="font-size:.78rem;color:var(--gray);text-align:center;margin-top:.8rem;">También puedes llamarnos al <a href="tel:916075315" style="color:var(--blue);font-weight:600">916 07 53 15</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><h3>Clínica Dental Joana</h3><p>Más de 25 años siendo tu clínica dental de confianza en Fuenlabrada, Madrid.</p></div>
+      <div class="footer-links"><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nuestra clínica</a></li><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#contacto">Contacto y citas</a></li></ul></div>
+      <div class="footer-links"><h4>Contacto</h4><ul><li><a href="tel:916075315">📞 916 07 53 15</a></li><li>📍 C/ Andorra 25, Fuenlabrada</li><li>🕐 Lun–Vie: 10–13h y 17–20h</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Clínica Dental Joana · Fuenlabrada, Madrid · Todos los derechos reservados</p></div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('hamburger');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => links.classList.remove('open')); });
+</script>
+</body>
+</html>
