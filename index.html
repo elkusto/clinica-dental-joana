@@ -48,8 +48,10 @@
     .lead { font-size: 1.05rem; color: var(--gray); line-height: 1.8; max-width: 660px; }
     #nosotros { background: var(--light); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .about-visual { background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%); border-radius: var(--radius); height: 340px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .about-center { text-align: center; position: absolute; color: var(--white); padding: 2rem; }
+    .about-visual { border-radius: var(--radius); height: 340px; position: relative; overflow: hidden; }
+    .about-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,74,138,0.65) 0%, rgba(42,191,191,0.45) 100%); display: flex; align-items: center; justify-content: center; }
+    .about-center { text-align: center; color: var(--white); padding: 2rem; }
     .about-center p { font-size: 1.1rem; line-height: 1.7; font-weight: 300; }
     .about-center strong { font-size: 1.6rem; display: block; font-family: 'Playfair Display', serif; margin-bottom: .5rem; }
     .values { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.8rem; }
@@ -57,7 +59,11 @@
     .value-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-l); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .value-item h4 { font-size: .95rem; font-weight: 600; margin-bottom: .2rem; }
     .value-item p { font-size: .87rem; color: var(--gray); line-height: 1.5; }
-    #tratamientos { background: var(--white); }
+    #galeria { background: var(--white); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .gallery-grid img { width: 100%; height: 280px; object-fit: cover; border-radius: var(--radius); transition: transform .25s, box-shadow .25s; display: block; }
+    .gallery-grid img:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(26,111,180,0.2); }
+    #tratamientos { background: var(--light); }
     .treatments-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
     .treatment-card { border: 1.5px solid #e2eaf3; border-radius: var(--radius); padding: 1.8rem; transition: all .25s; }
     .treatment-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-4px); }
@@ -109,7 +115,8 @@
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); padding: 1.5rem 5%; box-shadow: 0 8px 24px rgba(0,0,0,.1); }
       .hamburger { display: flex; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .about-visual { height: 200px; }
+      .about-visual { height: 220px; }
+      .gallery-grid { grid-template-columns: 1fr; }
       .form-row { flex-direction: column; }
       .hero-stats { gap: 2rem; }
     }
@@ -121,6 +128,7 @@
     <a href="#inicio" class="nav-logo">Clínica Dental Joana<span>Fuenlabrada · Madrid</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
       <li><a href="#tratamientos">Tratamientos</a></li>
       <li><a href="#por-que">¿Por qué elegirnos?</a></li>
       <li><a href="#contacto" class="nav-cta">Pedir cita</a></li>
@@ -150,9 +158,12 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-visual">
-        <div class="about-center">
-          <strong>"Lo nuestro es la mejor opción"</strong>
-          <p>Siempre intentamos conservar tus dientes naturales antes de cualquier otra alternativa.</p>
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo-FTlYoUHbDSQeK0EhIzzKibVfrobpu-mr4bfP9-v0hafrZ2_6sHHNccJd3Fp6wiHd15ADreEnKi_Mn_nOeNTud48ubuOlYfQMDp0rRAkK2lLRLlCFZAfZwvX_RtjPGyUyabtg1w=w1200-h800-k-no" alt="Clínica Dental Joana – Instalaciones" />
+        <div class="about-overlay">
+          <div class="about-center">
+            <strong>"Lo nuestro es la mejor opción"</strong>
+            <p>Siempre intentamos conservar tus dientes naturales antes de cualquier otra alternativa.</p>
+          </div>
         </div>
       </div>
       <div>
@@ -166,6 +177,20 @@
           <div class="value-item"><div class="value-icon">💳</div><div><h4>Financiación flexible</h4><p>Opciones de pago adaptadas a las necesidades de cada familia.</p></div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="section-inner">
+    <div class="section-tag">Nuestras instalaciones</div>
+    <h2>Conoce la clínica</h2>
+    <p class="lead">Un espacio moderno y acogedor diseñado para que te sientas cómodo durante tu visita.</p>
+    <div class="gallery-grid">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo-FTlYoUHbDSQeK0EhIzzKibVfrobpu-mr4bfP9-v0hafrZ2_6sHHNccJd3Fp6wiHd15ADreEnKi_Mn_nOeNTud48ubuOlYfQMDp0rRAkK2lLRLlCFZAfZwvX_RtjPGyUyabtg1w=w1200-h800-k-no" alt="Clínica Dental Joana – Vista general" />
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepI-4ov8KITxsm9h9nhWZFy8pwS5DDtyaitXBdT6rby1itEchZPk25hkUJ0WUtV_-I6t_hsP72slHWzr8BS1zlONFenQcPfChnDg_lnrKq4SloTvxe88HBisVQVklQ5n1PmRH3p=w1200-h800-k-no" alt="Clínica Dental Joana – Sala de tratamiento" />
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepO7GJvGVA6lY0xMzaGyFxzsRT7sffYHmvFghi2g9TskU04V4PVkqbI6ZNUTJYDqhEo2bhHs_kjAKMVLDLib0w0Sp3F4kzn-I-yrjjLtv5TDw3sIURxj64F9hY2ILn-E2xtlWVp=w1200-h800-k-no" alt="Clínica Dental Joana – Equipamiento" />
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoq-wErz8fgb8HrvKiec0ifsPvpJh1WHhHNHHoWx_l17qkp6QVYGMwd1jQNhyb6bxYLWuF2od0HntGm0LzP9KE3I0PXFg6Ybiy3rKaRiFd4jdIMrk2b5BW1YpWdx7EL7wIdxVVsqXz3X1VH=w1200-h800-k-no" alt="Clínica Dental Joana – Recepción" />
     </div>
   </div>
 </section>
@@ -234,7 +259,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand"><h3>Clínica Dental Joana</h3><p>Más de 25 años siendo tu clínica dental de confianza en Fuenlabrada, Madrid.</p></div>
-      <div class="footer-links"><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nuestra clínica</a></li><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#contacto">Contacto y citas</a></li></ul></div>
+      <div class="footer-links"><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nuestra clínica</a></li><li><a href="#galeria">Galería</a></li><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#contacto">Contacto y citas</a></li></ul></div>
       <div class="footer-links"><h4>Contacto</h4><ul><li><a href="tel:916075315">📞 916 07 53 15</a></li><li>📍 C/ Andorra 25, Fuenlabrada</li><li>🕐 Lun–Vie: 10–13h y 17–20h</li></ul></div>
     </div>
     <div class="footer-bottom"><p>© 2025 Clínica Dental Joana · Fuenlabrada, Madrid · Todos los derechos reservados</p></div>
